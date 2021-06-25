@@ -17,7 +17,7 @@ if KeepSynch
     %% Make ADVERTS:
     
     myicon = imread('Figures/AudioSign.png');
-    h=msgbox('Make sure volume Audio is 50% and Sensors are Connected','Setup','custom',myicon);
+    h=msgbox('Make sure volume Audio ranges between 40% to 60% and Sensors are Connected','Setup','custom',myicon);
     waitfor(h);
     
     %% Build Beep

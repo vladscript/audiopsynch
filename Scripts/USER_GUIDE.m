@@ -4,32 +4,53 @@
 % <https://github.com/vladscript/audiopsynch.git>
 % 
 % |Installation and Use Guide|
-
-
+% 
 %% 0. Requirements
 % 
 % * MATLAB
 % * PsychToolbox (PTB-3)
-% * Enabled Microphone
-% * Import ALL functions        >>Import_AudioPsynch
+% * Enabled Microphone (Windows Settings) in PC B
+% * Paired Neurosky (Bluetooth Settings) in PC B
 % 
-%% 1. PC A
-% Getting 
+%% 1. Settings
+% * Neurosky:       >>edit MindWaveSettings
+% * Microphone:     >>MicrophoneFinder
+%% 2. PC A [Windows by now ... ]
 % 
-%% 2. PC C
-% ACTUAL MODE: @ Original Coordiantes Order
+% Getting ready in PC A
 % 
-% * >>Select_Rasters
-%
-%% 3. Audio Test
-% ACTUAL MODE: @ Original Coordiantes Order
+% * >>BeepHeader
 % 
-% * >>Select_Rasters
-%
-%% 4. Experiment Test
-% ACTUAL MODE: @ Original Coordiantes Order
+%% 3. PC B [Windows]
 % 
-% * >>Select_Rasters
-%
+% Getting Ready PC B
+% >>
 
+% 
+% * >>NeuroSkyTest
+%
+%% 4. Audio Test
+% 
+% PC A and PC B Connected
+% 
+% * >>Select_Rasters
+%
+%% 5. Experiment Test
+% ACTUAL MODE: @ Original Coordiantes Order
+% 
+% * >>Experiment_Test
+%
+%% 6. Visualize Data Experiment Test
+% ACTUAL MODE: @ Original Coordiantes Order
+% 
+% * >>Load_Experiment_Test
+%
+%% 7. Menu Functions to make Experiments
+% 
+% * >>BeepHeader: copy and pate befor PTB script
+% 
+% * >>GatherData
+%
+% * >>TimeZeroFinder
+% 
 %% END ####################################################################
