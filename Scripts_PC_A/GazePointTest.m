@@ -7,7 +7,7 @@ try
     session1_client = ConnectToGP3;
     GP3connected=true;
 catch
-    warning('\n>>Check Gaze Point device is connected\n.');
+    warning('\n>>Check Gaze Point device is NOT connected\n.');
 end
 %% Run TEST
 if GP3connected
