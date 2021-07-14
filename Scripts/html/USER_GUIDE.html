@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title></title><meta name="generator" content="MATLAB 8.5"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2020-08-11"><meta name="DC.source" content="USER_GUIDE.m"><style type="text/css">
+      --><title></title><meta name="generator" content="MATLAB 8.5"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2021-07-13"><meta name="DC.source" content="USER_GUIDE.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -66,42 +66,64 @@ table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px soli
 
 
 
-  </style></head><body><div class="content"><h1><img src="USER_GUIDE_eq00560399602187840599.png" alt="$\bf{AudioPsynch}$"></h1><!--introduction--><p><b>SOURCE</b> : <a href="https://github.com/vladscript/audiopsynch.git">https://github.com/vladscript/audiopsynch.git</a></p><p><tt>Installation Guide</tt></p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">0. Requirements</a></li><li><a href="#2">1. PC A</a></li><li><a href="#3">2. PC C</a></li><li><a href="#4">3. Audio Test</a></li><li><a href="#5">4. Experiment Test</a></li><li><a href="#6">END ####################################################################</a></li></ul></div><h2>0. Requirements<a name="1"></a></h2><div><ul><li>MATLAB</li><li>PsychToolbox (PTB-3)</li><li>Enabled Microphone</li><li>Import ALL functions        &gt;&gt;Import_AudioPsynch</li></ul></div><h2>1. PC A<a name="2"></a></h2><p>Getting</p><h2>2. PC C<a name="3"></a></h2><p>ACTUAL MODE: @ Original Coordiantes Order</p><div><ul><li>&gt;&gt;Select_Rasters</li></ul></div><h2>3. Audio Test<a name="4"></a></h2><p>ACTUAL MODE: @ Original Coordiantes Order</p><div><ul><li>&gt;&gt;Select_Rasters</li></ul></div><h2>4. Experiment Test<a name="5"></a></h2><p>ACTUAL MODE: @ Original Coordiantes Order</p><div><ul><li>&gt;&gt;Select_Rasters</li></ul></div><h2>END ####################################################################<a name="6"></a></h2><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2015a</a><br></p></div><!--
+  </style></head><body><div class="content"><h1><img src="USER_GUIDE_eq00560399602187840599.png" alt="$\bf{AudioPsynch}$"></h1><!--introduction--><p><b>SOURCE</b> : <a href="https://github.com/vladscript/audiopsynch.git">https://github.com/vladscript/audiopsynch.git</a></p><p><tt>Installation and Use Guide</tt></p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">0. Requirements</a></li><li><a href="#2">1. General Settings</a></li><li><a href="#3">2. PC A [Audio Trigger]</a></li><li><a href="#4">3. PC B [Windows]</a></li><li><a href="#5">4. Experiment Test</a></li><li><a href="#6">5. Visualize Data Experiment Test</a></li><li><a href="#7">END</a></li></ul></div><h2>0. Requirements<a name="1"></a></h2><div><ul><li>MATLAB</li><li>PsychToolbox (PTB-3)</li><li>Enabled Microphone (Windows Settings) in PC B</li><li>Paired Neurosky (Bluetooth Settings) in PC B</li></ul></div><h2>1. General Settings<a name="2"></a></h2><div><ul><li>Import functions:           &gt;&gt;Import_AudioPsynch</li></ul></div><div><ul><li>Neurosky (each time it's paired):           &gt;&gt;edit MindWaveSettings               COMportNumber See in (W10):               WindowsSettings/Bluetooht and Other Devices/More Options               See Baud Rate               See Data Format &amp; Type           &gt;&gt;NeuroSkyTest</li></ul></div><div><ul><li>Microphone (run once):           &gt;&gt;MicrophoneFinder               Sampling frequency               N bits               N channels               Seconds to record</li></ul></div><h2>2. PC A [Audio Trigger]<a name="3"></a></h2><p>Setup PC A 1- Connect audio splitter. 2- Set and edit &gt;&gt;BeepTrainBuilder Audio beep to be send * &gt;&gt;BeepHeader</p><h2>3. PC B [Windows]<a name="4"></a></h2><p>Getting Ready PC B * &gt;&gt;LaunchSetupB</p><h2>4. Experiment Test<a name="5"></a></h2><p>ACTUAL MODE: @ Original Coordiantes Order</p><div><ul><li>&gt;&gt;Experiment_Test</li></ul></div><h2>5. Visualize Data Experiment Test<a name="6"></a></h2><p>ACTUAL MODE: @ Original Coordiantes Order</p><div><ul><li>&gt;&gt;Load_Experiment_Test</li></ul></div><h2>END<a name="7"></a></h2><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2015a</a><br></p></div><!--
 ##### SOURCE BEGIN #####
 %% $\bf{AudioPsynch}$
 % 
 % *SOURCE* :
 % <https://github.com/vladscript/audiopsynch.git>
 % 
-% |Installation Guide|
-
-
+% |Installation and Use Guide|
+% 
 %% 0. Requirements
 % 
 % * MATLAB
 % * PsychToolbox (PTB-3)
-% * Enabled Microphone
-% * Import ALL functions        >>Import_AudioPsynch
+% * Enabled Microphone (Windows Settings) in PC B
+% * Paired Neurosky (Bluetooth Settings) in PC B
 % 
-%% 1. PC A
-% Getting 
+%% 1. General Settings
 % 
-%% 2. PC C
-% ACTUAL MODE: @ Original Coordiantes Order
+% * Import functions:
+%           >>Import_AudioPsynch
 % 
-% * >>Select_Rasters
-%
-%% 3. Audio Test
-% ACTUAL MODE: @ Original Coordiantes Order
+% * Neurosky (each time it's paired):        
+%           >>edit MindWaveSettings
+%               COMportNumber See in (W10):
+%               WindowsSettings/Bluetooht and Other Devices/More Options
+%               See Baud Rate
+%               See Data Format & Type
+%           >>NeuroSkyTest
 % 
-% * >>Select_Rasters
-%
+% * Microphone (run once):      
+%           >>MicrophoneFinder
+%               Sampling frequency
+%               N bits
+%               N channels
+%               Seconds to record
+% 
+%% 2. PC A [Audio Trigger]
+% 
+% Setup PC A
+% 1- Connect audio splitter.
+% 2- Set and edit >>BeepTrainBuilder
+% Audio beep to be send
+% * >>BeepHeader
+% 
+%% 3. PC B [Windows]
+% 
+% Getting Ready PC B
+% * >>LaunchSetupB
 %% 4. Experiment Test
 % ACTUAL MODE: @ Original Coordiantes Order
 % 
-% * >>Select_Rasters
+% * >>Experiment_Test
 %
-
-%% END ####################################################################
+%% 5. Visualize Data Experiment Test
+% ACTUAL MODE: @ Original Coordiantes Order
+% 
+% * >>Load_Experiment_Test
+%
+%% END
 ##### SOURCE END #####
 --></body></html>

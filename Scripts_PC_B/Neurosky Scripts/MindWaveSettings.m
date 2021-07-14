@@ -2,7 +2,13 @@
 % For Windows:
 % Go to Bluetooth Settings and find  More Bluetooth options link
 % Set the COMX number for the MindWave Mobile 'Dev A'
-COMportNumber=4;
+% 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% In newer versions: serialportlist Introduced in R2019b
+% version('-release') or just exist(serialportlist ) (slower?)
+
+COMportNumber=5;
 comPortName1 = sprintf('\\\\.\\COM%d', COMportNumber);
 % Baud rate for use with TG_Connect() and TG_SetBaudrate().
 TG_BAUD_57600 =      57600;

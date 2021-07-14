@@ -16,7 +16,7 @@
 %   CAMs:    logical index
 function [NSs,GPTs,AUs,CAMs]=LaunchSetupB(NS,GPT,AU,CAM)
 %% Setup
-Import_AudioPsynch;
+% Import_AudioPsynch;
 NSs=false; GPTs=false; AUs=false; CAMs=false;
 %% Neurosky
 if NS
@@ -48,10 +48,8 @@ end
 %% Video
 if CAM
     % Camera Test
-    CAMs=true;
+    CameraTest;
 else
     fprintf('\n>>No video input required\n')
 end
-
-
 

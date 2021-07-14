@@ -12,7 +12,7 @@ MindWaveSettings;
 
 % Recording settings in SECONDS:
 fs_eeg=512;
-Nseconds=30; % Total recording
+Nseconds=15; % Total recording
 WindowSizeEEG=1; % Size of the buffer, data viewer and data save
 data = zeros(1,round(WindowSizeEEG*fs_eeg));    %preallocate buffer
 %load thinkgear dll
@@ -82,11 +82,13 @@ if DeviceOK
     EEGaxis.XTickLabel=1000*linspace(0,WindowSizeEEG,5);
     EEGaxis.YLabel.String='EEG Data';
     EEGaxis.XLabel.String='ms';
+    drawnow;
     winPcn=0;
     % Read Data
     fprintf( 'Connected.  Reading Packets...\n' );
     j = 0; % windows size counter
     i = 0; % sample counter
+    wincnt=1;
     while (i < round(Nseconds*fs_eeg))  
         % if a packet was read...
         if (calllib('thinkgear64','TG_ReadPackets',connectionId1,1) == 1)   
@@ -100,12 +102,12 @@ if DeviceOK
         if (j == round(WindowSizeEEG*fs_eeg))
             % plot the data
 %             plot(EEGaxis,data,'LineWidth',2); 
-%             drawnow;
-            winPcn=j/WindowSizeEEG*fs_eeg;
-            EEGaxis.Title.String=sprintf('Testing: %i %%',round(100*winPcn))
+            drawnow;
+%             winPcn=j/(WindowSizeEEG*fs_eeg);
+            EEGaxis.Title.String=sprintf('Testing: %i %%',round(100*wincnt/(Nseconds/WindowSizeEEG)));
             WindowSignal.YData=data;
             j = 0;
-            
+            wincnt=wincnt+1;
         end
     end
     %% Disconnect             
