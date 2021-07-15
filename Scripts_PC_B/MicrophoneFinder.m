@@ -1,4 +1,6 @@
 clc; clear;
+hmsg=msgbox('Check your audio controllers settings, e.g. realtek software');
+waitfor(hmsg); delete(hmsg);
 %% Load Audio Object to Synch
 % Settings [low-quallity]
 fs_mic  =   48000; % Same as default Beep
@@ -23,13 +25,18 @@ fprintf(' %i found.\n',Ndevices)
 for n=1:Ndevices
     IDdevice=info.input(n).ID;
     fprintf('>>Testing:\n %s\n',info.input(n).Name)
-    SynchrecObj = audiorecorder(fs_mic,Nbits,Nchannels,n);
-    fprintf('>>Recording %i seconds: ',Nsecrec)
-    record(SynchrecObj,Nsecrec);
-    fprintf('ready.\n')
-    fprintf('>>Getting signal: ')
-    pause(3);
-    y=getaudiodata(SynchrecObj);
+    try
+        SynchrecObj = audiorecorder(fs_mic,Nbits,Nchannels,n);
+        fprintf('>>Recording %i seconds: ',Nsecrec)
+        record(SynchrecObj,Nsecrec);
+        fprintf('ready.\n')
+        fprintf('>>Getting signal: ')
+        pause(3);
+        y=getaudiodata(SynchrecObj);
+    catch
+        warning('Microphone not found.');
+        y=[];
+    end
     Y{n}=y;
     fprintf('done.\n')
 end
@@ -40,6 +47,9 @@ figure;
 t=linspace(0,2,fs_mic*Nsecrec);
 for n=1:Ndevices
     subplot(Ndevices,1,n);
+    if isempty(Y{n})
+        Y{n}=zeros(size(t));
+    end
     plot(t,Y{n})
     title(['Mic: ',info.input(n).Name])
     axis tight; grid on;
@@ -61,12 +71,16 @@ fprintf('done.\n')
 [indx,tf] = listdlg('PromptString',{'Select a microphone.',...
     'Only the one with the audio of Laptop A.',''},...
     'SelectionMode','single','ListSize',[300,300],'ListString',MICROS);
-fprintf('>>Saving settings ') 
-% MicrphoneDev=MICROS{};
-MidID=info.input(indx).ID;
-% Make table
-T=table(MidID,Nbits,Nchannels,fs_mic);
-writetable(T,'MicSetts.csv','Delimiter',',','QuoteStrings',true)
-fprintf(' in file [MicSetts.csv]: done.\n')
+if tf
+    fprintf('>>Saving settings ') 
+    % MicrphoneDev=MICROS{};
+    MidID=info.input(indx).ID;
+    % Make table
+    T=table(MidID,Nbits,Nchannels,fs_mic);
+    writetable(T,'MicSetts.csv','Delimiter',',','QuoteStrings',true)
+    fprintf(' in file [MicSetts.csv]: done.\n')
+else
+    fprintf('>>Unchanged settings\n') 
+end
 %% END
 clear; close all;

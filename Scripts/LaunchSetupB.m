@@ -15,41 +15,45 @@
 %   AUs:     logical index
 %   CAMs:    logical index
 function [NSs,GPTs,AUs,CAMs]=LaunchSetupB(NS,GPT,AU,CAM)
-%% Setup
-% Import_AudioPsynch;
+%% Initialize Status
 NSs=false; GPTs=false; AUs=false; CAMs=false;
 %% Neurosky
 if NS
-    % Test Script: plot data 30 seconds
+    % Test Script: plot data N seconds
     try
         NeuroSkyTest;
         NSs=true;
-    catch 
-        warning('>>Check Neurosky device is connected/paired or COM port.');
+    catch
+        fprintf('\n');
+        warning('Check Neurosky device is connected/paired or COM port.');
     end
 else
-    fprintf('\n>>No EEG required\n')
+    fprintf('\n>>No EEG required')
 end
 %% GazePoint
 if GPT
     % Test Script: plot data X seconds
     GazePointTest;
-    GPTs=GP3connected;
 else
-    fprintf('\n>>No Eye Tracking required\n')
+    fprintf('\n>>No Eye Tracking required')
 end
 %% Microphone
 if AU
-    % Microphone Test
-    AUs=true;
+    try
+        MicrophoneTest;
+        AUs=true;
+    catch
+        fprintf('\n');
+        warning('Check microphone settings.');
+    end
 else
-    fprintf('\n>>No audio input required\n')
+    fprintf('\n>>No audio input required')
 end
 %% Video
 if CAM
     % Camera Test
     CameraTest;
 else
-    fprintf('\n>>No video input required\n')
+    fprintf('\n>>No video input required')
 end
 

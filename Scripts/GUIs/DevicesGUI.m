@@ -24,45 +24,49 @@ c.Position = [10 80 200 20];
 d = uicontrol('Style','checkbox',...
     'String',{'Camera'},'Callback', @checkbox4_Callback);
 d.Position = [10 40 200 20];
-A=[a.Value,b.Value,c.Value,d.Value];
+% A=[a.Value,b.Value,c.Value,d.Value];
 waitfor(FigGui);
 %% Nested Functions
 function checkbox1_Callback(a, ~, ~)
 % Hint: get(hObject,'Value') returns toggle state of checkbox1
     if (get(a,'Value') == get(a,'Max'))
-        fprintf('\n>>Device Selected');
+        fprintf('\nDevice %s Selected',a.String{1});
         A(1)=1;
     else
-        fprintf('\n>device un selected');
+        fprintf('\ndevice %s unselected',a.String{1});
+        A(1)=0;
     end
 end
 function checkbox2_Callback(b, ~, ~)
     % Hint: get(hObject,'Value') returns toggle state of checkbox1
     if (get(b,'Value') == get(b,'Max'))
-        fprintf('\n>>Device Selected');
+        fprintf('\nDevice %s Selected',b.String{1});
         A(2)=1;
     else
-        fprintf('\n>device un selected');
+        fprintf('\ndevice %s unselected',b.String{1});
+        A(2)=0;
     end
 end
 
 function checkbox3_Callback(c, ~, ~)
     % Hint: get(hObject,'Value') returns toggle state of checkbox1
     if (get(c,'Value') == get(c,'Max'))
-        fprintf('\n>>Device Selected');
+        fprintf('\nDevice %s Selected',c.String{1});
         A(3)=1;
     else
-        fprintf('\n>device un selected');
+        fprintf('\ndevice %s unselected',c.String{1});
+        A(3)=0;
     end
 end
 
-function checkbox4_Callback(a, ~, ~)
+function checkbox4_Callback(d, ~, ~)
 % Hint: get(hObject,'Value') returns toggle state of checkbox1
-    if (get(a,'Value') == get(a,'Max'))
-        fprintf('\n>>Device Selected');
+    if (get(d,'Value') == get(d,'Max'))
+        fprintf('\nDevice %s Selected',d.String{1});
         A(4)=1;
     else
-        fprintf('\n>device un selected');
+        fprintf('\ndevice %s unselected',d.String{1});
+        A(4)=0;
     end
 end
 end

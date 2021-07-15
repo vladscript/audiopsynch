@@ -1,4 +1,8 @@
-function SettingGazePoint(window,session1_client,MonitorMetaData)
+function SettingGazePoint(window,session1_client)
+
+fprintf('\n>>Loading image:')
+ImageLab = imresize( imread('Figures\HeaderLab.png'), 0.75 );
+fprintf(' done.\n')
 
 % Retreive the maximum priority number
 topPriorityLevel = MaxPriority(window);
@@ -7,9 +11,7 @@ Priority(topPriorityLevel);
 Screen('BlendFunction', window, 'GL_SRC_ALPHA', 'GL_ONE_MINUS_SRC_ALPHA');
 Screen('Flip', window);
 
-fprintf('\n>>Loading image:')
-ImageLab = imresize( imread('Figures\HeaderLab.png'), 0.75 );
-fprintf(' done.\n')
+
 % Make the image into a texture
 imageTexture = Screen('MakeTexture', window, ImageLab);
 

@@ -1,45 +1,59 @@
 # **AudioPsynch**
 
-Audio triggered setup for Psychophysics experiments. 
-[Tralational Neuroscience Laboratory](https://www.neurocienciasunam.com/lab-neurociencia-traslacional)
+Audio-triggered & single setup for Psychophysics experiments. 
+[Traslational Neuroscience Laboratory](https://www.neurocienciasunam.com/lab-neurociencia-traslacional)
 ![Laboratory](/Figures/HeaderLab.png)
 
-MATLAB scripts to record 
-- EEG Bluetooth, 
-- Eyetracking USB IP, 
-- audio built-in and 
-- video of webcam &
-- Tests in [Psychtoolbox-3](http://psychtoolbox.org/)
-
-## Setup A: Two-PC Audio Triggered system:
-
-![Setup](/Figures/SetupA.png)
-
-## Setup B: One-PC & all-in sensors system:
-
-![Setup](/Figures/SetupB.png)
-
-### Experiment Profile:
-* Neurophysiological and behavioral data in stimuli-response paradigms
-* Stimuli: audio, images, video
-* For instance: Stroop Effect et al
+MATLAB scripts and functinos to record simultaneuosly:
+- EEG by Bluetooth, 
+- Eyetracking by USB TCP/IP socket, 
+- microphone,
+- webcam &
+- stimuli & answers programmed in Psychtoolbox-3 or [PTB](http://psychtoolbox.org/)
 
 ## Brief Hardware Suggestion
 
-* **PC A**
+These are equipmets required:
+
+* **PC A for Setup A**
   - Windows
+  - Webcam & microphone
   - GPU (optional)
-* **PC B**
+  - MATLAB & PTB
+  - GazePoint Control
+  - Audio 3.5 jack Audio Output
+  
+* **PC B for Setup B**
   - Windows
+  - Webcam & microphone
   - Bluetooth
-  - 3.5 Audio jack Input
+  - Audio 3.5 jack Input
+  - MATLAB & PTB
+  - GazePoint Control (only if Setup B)
+  
 * **[Neurosky](http://neurosky.com/)**
   - Single Channel EEG
+  
 * **[GazePoint](https://www.gazept.com/)**
   - IR Eye Tracking
-    
+  
+--
+  
+## Setup A: Two-PC Audio Triggered system:
 
-## Audio Trigger for Synchronizated Recordings
+This setup, desribed below, also requires a custom audio jack splitter (3.5 hijack) which basically sends audio output of PC A to audio input of PC B
+
+![Setup](/Figures/SetupA.PNG "Setup A")
+
+
+### Audio splitter
+
+To split audio, it is necessary the know the [TRRS](https://en.wikipedia.org/wiki/Phone_connector_(audio)) configuration of your devices.
+For instance, we developed this little hijack to separate audio output and microphone input:
+
+![TRRS Jack](/Figures/HiJackAudio.png "3.5 hijack")
+
+### Audio Trigger for Synchronizated Recordings
 
 * **PC A** sends beep to **PC B**
 
@@ -51,11 +65,22 @@ MATLAB scripts to record
   - [Neurosky Thinkgear](https://store.neurosky.com/products/thinkgear-connector)
   - [GazePoint data to MATLAB](https://github.com/RingoHHuang/gazepoint-matlab-toolbox)
   
+### Example Script
+
 --
  
+## Setup B: One-PC & all-in sensors system:
+
+For this setup all sensors are plugged to one single PC.
+
+![Setup](/Figures/SetupB.PNG "Setup B")
+
+### Example Script 
+--
+
 ## Help & Demos
 
 
-1 [**Help**](http://htmlpreview.github.io/?https://https://github.com/vladscript/audiopsynch/blob/master/Scripts/html/USER_GUIDE.html)
+1 [**Help**](http://htmlpreview.github.io/?https://github.com/vladscript/audiopsynch/blob/master/Scripts/html/USER_GUIDE.html)
 
 2 Stroop

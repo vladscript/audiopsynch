@@ -9,10 +9,11 @@
 % 
 % * MATLAB
 % * PsychToolbox (PTB-3)
-% * Enabled Microphone (Windows Settings) in PC B
-% * Paired Neurosky (Bluetooth Settings) in PC B
+% * GazePoint Control
+% * Enabled Microphone (Windows Settings)
+% * Paired Neurosky (Bluetooth Settings)
 % 
-%% 1. General Settings
+%% 1. General Settings and Tests
 % 
 % * Import functions:
 % 
@@ -37,27 +38,41 @@
 %               N channels
 %               Seconds to record
 % 
+% * Camera (only once or a webcam is installed)
+%   
+%           >>CameraFinder
+%               Select webcam: built-in or USB
+%               Select resolution available
+% 
 %% 2. Setup A [Audio Trigger]
 % 
 % * *PC A*
-% 1- Connect audio splitter.
-% 2- Set and edit >>BeepTrainBuilder
+% 
+% # Connect audio splitter.
+% # Set and edit >>BeepTrainBuilder
+% 
 % Audio beep to be send
-% * >>BeepHeader
+% # >>BeepHeader
 % 
 %% 3. Setup B [Single PC]
 % 
 % * *PC B*
-% * >>LaunchSetupB
+% * -------------- Before Experiment --------------------------------------
+% * 0 Turn PC on
+% * 1 Open MATLAB @ AudioPsynch location
+% * 2 Plug and callibrate Eye Tracker using GazePoint Control
+% * 3 Pair Neurosky to Windows
+% * 4 Run: >>ExampleSetupB
+% * 4.1 Select sensors to use and see if they are detected by MATLAB
+% * -------------- Experiment ---------------------------------------------
+% * 5 Re-Callibrate Eye-Tracking with subject
+% * 6 Run Experiment with subject
 % 
-%% 4. Experiment Test
-% ACTUAL MODE: @ Original Coordiantes Order
+%% 4. Experiment Demos
 % 
-% * >>Experiment_Test
+% * >>
 %
 %% 5. Visualize Data Experiment Test
-% ACTUAL MODE: @ Original Coordiantes Order
 % 
-% * >>Load_Experiment_Test
+% * >>
 %
-%% END

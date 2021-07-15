@@ -2,15 +2,14 @@
 %  Using code from: https://github.com/RingoHHuang/gazepoint-matlab-toolbox
 % 
 %% Set-up Matlab to GP3 session1 socket
-GP3connected=false;
 try
-    session1_client = ConnectToGP3;
-    GP3connected=true;
+    session1_client = ConnectToGP3; % creats TCP IP client
+    GPTs=true;
 catch
-    warning('\n>>Check Gaze Point device is NOT connected\n.');
+    warning('Check if Gaze Point device  is connected and callibrated.');
 end
 %% Run TEST
-if GP3connected
+if GPTs
     %% Spawn a second Matlab session2 that records GP3 data to output file
     TimeNow=fix(clock);
     DT=[num2str(TimeNow(1)),'_',num2str(TimeNow(2)),'_',num2str(TimeNow(3)),...
@@ -24,13 +23,13 @@ if GP3connected
         'ENABLE_SEND_POG_FIX','ENABLE_SEND_PUPIL_LEFT');
     %% Load Psychtoolbox Settings
     fprintf('\n>>Testing Eye Tracking:')
-    sca; % close all; clearvars;
+    sca;
     PsychDefaultSetup(2);
     screens = Screen('Screens');        
     screenNumber = max(screens); % External if any
     [window, ~] = PsychImaging('OpenWindow', screenNumber, 0);
-    MonitorMetaData=StartUpMonitor(screenNumber,window);
-    SettingGazePoint(window,session1_client,MonitorMetaData);
+    % MonitorMetaData=StartUpMonitor(screenNumber,window);
+    SettingGazePoint(window,session1_client);
     fprintf('tested\n')
     %% Stop collecting data in client2
     fprintf('Stop recording\n')
