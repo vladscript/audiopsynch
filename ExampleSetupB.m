@@ -64,9 +64,6 @@ if NSs
     gatherEEGdata();
 end
 
-%% Start Experiment
-% Set Time Zero for each sensor [RECORDING]
-% Set Time Zero for experiment
 %% Save Data
 % Epxeriment Workspace with TimeZeros
 
