@@ -53,12 +53,17 @@ else
     % MAKE CONNECTION *****************************************************
     errCode = calllib('thinkgear64', 'TG_Connect',  connectionId1,comPortName1,TG_BAUD_57600,TG_STREAM_PACKETS );
     if ( errCode < 0 )
+        switch errCode
+            case -1 
+                fprintf('\n@c connectionId does not refer to a valid ThinkGear Connection ID handle.')
+            case -2
+                fprintf('\n@c serialPortName could not be opened as a serial communication port for any reason. Check that the name is a valid COM port on your system.')
+            case -3
+                fprintf('\n@c serialBaudrate is not a valid TG_BAUD_* value.')
+            case -4
+                fprintf('\n@c serialDataFormat is not a valid TG_STREAM_* type.')
+        end
         error( sprintf( 'ERROR: TG_Connect() returned %d.\n', errCode ) );
-        % -1 if @c connectionId does not refer to a valid ThinkGear Connection ID handle.
-        % -2 if @c serialPortName could not be opened as a serial communication port for any reason. Check
-        % that the name is a valid COM port on your system.
-        % -3 if @c serialBaudrate is not a valid TG_BAUD_* value.
-        % -4 if @c serialDataFormat is not a valid TG_STREAM_* type.
     else
         DeviceOK=1;
         % Ready to read Data

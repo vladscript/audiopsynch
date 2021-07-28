@@ -63,9 +63,13 @@ For instance, we developed this little hijack to separate audio output and micro
   - [GazePoint API](http://www.gazept.com/dl/Gazepoint_API_v2.0.pdf)
   - [PsychToolbox](http://psychtoolbox.org/)
   - [Neurosky Thinkgear](https://store.neurosky.com/products/thinkgear-connector)
+  ![Thinkgear](/Figures/ThinkgearFunctions "Thinkgear")
   - [GazePoint data to MATLAB](https://github.com/RingoHHuang/gazepoint-matlab-toolbox)
   
 ### Example Script
+
+- Run >>Help_AP to see instrucions
+- Run >>ExampleSetupA
 
 --
  
@@ -76,6 +80,10 @@ For this setup all sensors are plugged to one single PC.
 ![Setup](/Figures/SetupB.PNG "Setup B")
 
 ### Example Script 
+
+- Run >>Help_AP to see instrucions
+- Run >>ExampleSetupB
+
 --
 
 ## Help & Demos

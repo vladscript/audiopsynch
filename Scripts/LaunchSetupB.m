@@ -25,7 +25,7 @@ if NS
         NSs=true;
     catch
         fprintf('\n');
-        warning('Check Neurosky device is connected/paired or COM port.');
+        warning('Check Neurosky device is NOT connected/paired or COM port.');
     end
 else
     fprintf('\n>>No EEG required')
