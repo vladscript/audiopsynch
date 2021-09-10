@@ -57,7 +57,7 @@ For instance, we developed this little hijack to separate audio output and micro
 
 * **PC A** sends beep to **PC B**
 
-![Experiment Profile](/Figures/AudioTrigger.png)
+![Experiment Profile](/Figures/AudioTrigger.PNG)
 
 * Third Party Software & Sources:
   - [GazePoint API](http://www.gazept.com/dl/Gazepoint_API_v2.0.pdf)
