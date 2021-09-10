@@ -62,7 +62,7 @@ if DeviceOK
         % if a packet was read...
         drawnow();     %give time for callback
         quitthis = get(Stopbtn, 'Value');
-        if quitthis;
+        if quitthis
             break;
         end
         if (calllib('thinkgear64','TG_ReadPackets',connectionId1,1) == 1)   
@@ -72,7 +72,7 @@ if DeviceOK
                 NeuroskyData.EEG(j) = calllib('thinkgear64','TG_GetValue',connectionId1,TG_DATA_RAW);
                 NeuroskyData.Battery = calllib('thinkgear64','TG_GetValue',connectionId1,0);
                 NeuroskyData.PoorSignal = calllib('thinkgear64','TG_GetValue',connectionId1,1);
-                fprintf('>Battery %i, Signal:&i',NeuroskyData.Battery,NeuroskyData.PoorSignal);
+                fprintf('>Battery %i, Signal:%i\n',NeuroskyData.Battery,NeuroskyData.PoorSignal);
             end
 %         else
 %             %fprintf('\);
