@@ -92,3 +92,5 @@ For this setup all sensors are plugged to one single PC.
 1 [**Help**](http://htmlpreview.github.io/?https://github.com/vladscript/audiopsynch/blob/master/Scripts/html/USER_GUIDE.html)
 
 2 Stroop
+
+3 Otra prueba
